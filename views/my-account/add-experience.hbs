@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add</title>
+</head>
+
+<body>
+    <a href="/">Home</a>
+    <a href="/">Log out</a>
+    <a href="/my-account">My account</a>
+    <h1>Add experience</h1>
+    <form action="/my-account/add-experience" method="POST">
+        <div>
+            <label for="location">Location
+                <input type="text" name="location" id="location">
+            </label>
+        </div>
+        <div>
+            <label for="country">Country
+                <select name="country" id="country">
+                    <option value="Spain">Spain</option>
+                    <option value="Canada">Canada</option>
+                    <option value="France">France</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Netherlands">Netherlands</option>
+                    <option value="Portugal">Portugal</option>
+                </select>
+            </label>
+        </div>
+        <div>
+            <label for="description">Description
+                <input type="text" name="description" id="description">
+            </label>
+        </div>
+        <div>
+            <label for="rating">Rating
+                <input type="text" name="rating" id="rating">
+            </label>
+        </div>
+        <div>
+            <label for="tags">Etiqueta
+                <select>
+                    <option value="nature">Nature</option>
+                    <option value="landscape">Landscape</option>
+                    <option value="culture">Culture</option>
+                    <option value="roadtrip">Roadtrip</option>
+                    <option value="big city">Big city</option>
+                </select>
+            </label>
+        </div>
+        <input type="submit" value="Add experience">
+    </form>
+</body>
+
+</html>
