@@ -6,7 +6,7 @@ const passport = require("passport")
 
 const indexRoutes = require("./routes/index.routes");
 const authRoutes = require("./routes/auth.routes");
-const locationsRoutes = require("./routes/locations.routes");
+const countriesRoutes = require("./routes/countries.routes");
 const tagsRoutes = require("./routes/tags.routes")
 const myAccountRoutes = require("./routes/my-account.routes")
 
@@ -14,7 +14,7 @@ const db = require('./db.js')
 
 // require("./authentication");
 
-const PORT = 3000;
+const PORT = 3100;
 
 db.connect();
 
@@ -29,7 +29,7 @@ server.set('views', path.join(__dirname, 'views'));
 server.set('view engine', 'hbs');
 
 server.use("/", indexRoutes);
-server.use("/", locationsRoutes);
+server.use("/", countriesRoutes);
 server.use("/", tagsRoutes);
 server.use("/auth", authRoutes);
 server.use("/my-account", myAccountRoutes);

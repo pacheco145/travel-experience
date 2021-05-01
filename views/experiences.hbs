@@ -10,14 +10,19 @@
     <a href="/">Home</a>
     <a href="/auth/login">Log in</a>
     <a href="/auth/register">Register</a>
-    <h1>Buscar por etiquetas</h1>
-    <div class="tags-container">
-        {{#each tags}}
-            <a href="/tags/{{this}}">
-                <div class="tags">
-                    {{this}}
+    {{#if country}}
+        <h1>{{country}}</h1>
+    {{/if}}
+    {{#if tag}}
+        <h1>{{tag}}</h1>
+    {{/if}}
+    <div class="experiences-container">
+        {{#each experiences}}
+                <div class="experience">
+                    <h2>{{location}}</h2>
+                    <p>{{description}}</p>
+                    <p>Rating: {{rating}}</p>
                 </div>
-            </a>
         {{/each}}
     </div>
 </body>

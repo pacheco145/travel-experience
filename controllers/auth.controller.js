@@ -1,3 +1,4 @@
+// const express = require('express')
 const passport = require('passport');
 
 module.exports = {
@@ -13,7 +14,7 @@ module.exports = {
                 if (error) {
                     return next(error);
                 }
-                return res.redirect('/');
+                return res.redirect('/my-account');
             });
         };
         passport.authenticate('registro', done)(req)
@@ -30,7 +31,7 @@ module.exports = {
                 if(error) {
                     return next(error);
                 }
-                return res.redirect('/')
+                return res.redirect('/my-account')
             })
         })(req);
     }

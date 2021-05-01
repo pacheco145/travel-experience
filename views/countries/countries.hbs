@@ -10,6 +10,15 @@
     <a href="/">Home</a>
     <a href="/auth/login">Log in</a>
     <a href="/auth/register">Register</a>
-    <h1>Buscar por lugar</h1>
+    <h1>Buscar por país</h1>
+    <div class="countries-container">
+        {{#each experiences}}
+            <a href="/countries/{{country}}">
+                <div class="country">
+                    {{country}}
+                </div>
+            </a>
+        {{/each}}
+    </div>
 </body>
 </html>
