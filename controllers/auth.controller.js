@@ -14,7 +14,7 @@ module.exports = {
                 if (error) {
                     return next(error);
                 }
-                return res.redirect('/my-account');
+                return res.redirect('/auth/login');
             });
         };
         passport.authenticate('registro', done)(req)

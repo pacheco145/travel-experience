@@ -16,19 +16,19 @@ const validatePassword = (password) => {
 
 const registerStrategy = new LocalStrategy(
     {
-        usernameField: 'username',
-        emailField: 'email',
+        // usernameField: 'username',
+        usernameField: 'email',
         passwordField: 'password',
         passReqToCallback: true,
     },
-    async(req, username, email, password, done) => {
+    async(req, email, password, done) => {
         try {
-            const existingUsername = await User.findOne({username: username});
+            // const existingUsername = await User.findOne({username: username});
             
-            if(existingUsername) {
-                const error = new Error('Existing username');
-                return done(error)
-            }
+            // if(existingUsername) {
+            //     const error = new Error('Existing username');
+            //     return done(error)
+            // }
 
             const existingEmail = await User.findOne({email: email});
             
@@ -54,7 +54,7 @@ const registerStrategy = new LocalStrategy(
             const hash = await bcrypt.hash(password, saltRounds);
 
             const newUser = new User({
-                username: username,
+                username: req.body.username,
                 email: email,
                 password: hash
             });
