@@ -4,20 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Travel experiences</title>
 </head>
 <body>
-    <a href="/">Home</a>
-    <a href="/auth/login">Log in</a>
-    <a href="/auth/register">Register</a>
+    <nav class="nav-bar">
+        <a href="/">Home</a>
+    
+        {{#if user}}
+            <form action="/auth/logout" method="POST">
+                <button type="submit">Logout</button>
+            </form>
+        {{else}}
+            <a href="/auth/login">Log in</a>
+            <a href="/auth/register">Register</a>
+        {{/if}}
+        <a href="/my-account">My account</a>
+    </nav>
+
     <h1>Buscar por etiquetas</h1>
-    <div class="tags-container">
+    <div class="tags">
         {{#each tags}}
-            <a href="/tags/{{this}}">
-                <div class="tags">
-                    {{this}}
-                </div>
-            </a>
+            <a class="tags__option" href="/tags/{{this}}">
+            <div class="tags__image">
+                <img src="/uploads/map.jpg" alt="">
+            </div>
+            <h2>{{this}}</h2>
+        </a>
         {{/each}}
     </div>
 </body>

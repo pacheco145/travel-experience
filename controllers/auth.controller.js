@@ -1,4 +1,4 @@
-// const express = require('express')
+const express = require('express')
 const passport = require('passport');
 
 module.exports = {
@@ -34,5 +34,19 @@ module.exports = {
                 return res.redirect('/my-account')
             })
         })(req);
+    },
+    logoutPost: (req, res, next) => {
+        if (req.user) {
+            req.logout();
+
+            req.session.destroy(()=>{
+                res.clearCookie('Connect.sid');
+                return res.redirect('/')
+            })
+        }
+
+        else {
+            return res.status(200).json('No se ha iniciado sesión')
+        }
     }
 }

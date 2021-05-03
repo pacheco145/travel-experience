@@ -5,12 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Travel experiences</title>
 </head>
 
 <body>
-    <a href="/">Home</a>
-    <a href="/auth/register">Register</a>
+    <nav class="nav-bar">
+        <a href="/">Home</a>
+    
+        <a href="/auth/login">Log in</a>
+        <a href="/auth/register">Register</a>
+        <a href="/my-account">My account</a>
+    </nav>
+
     <h1>Login</h1>
     <form action="/auth/login" method="POST">
         <div>
@@ -23,7 +30,7 @@
                 <input type="password" name="password" id="password">
             </label>
         </div>
-        <input type="submit" value="Registrarse">
+        <input type="submit" value="Log in">
     </form>
 </body>
 

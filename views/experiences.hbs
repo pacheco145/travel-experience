@@ -4,12 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Travel experiences</title>
 </head>
 <body>
-    <a href="/">Home</a>
-    <a href="/auth/login">Log in</a>
-    <a href="/auth/register">Register</a>
+    <nav class="nav-bar">
+        <a href="/">Home</a>
+    
+        {{#if user}}
+            <form action="/auth/logout" method="POST">
+                <button type="submit">Logout</button>
+            </form>
+        {{else}}
+            <a href="/auth/login">Log in</a>
+            <a href="/auth/register">Register</a>
+        {{/if}}
+        <a href="/my-account">My account</a>
+    </nav>
+
     {{#if country}}
         <h1>{{country}}</h1>
     {{/if}}

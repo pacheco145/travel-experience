@@ -3,12 +3,12 @@ const Experience = require('../models/Experience.model')
 
 const countriesGet = async(req, res) => {
     const experiences = await Experience.find();
-    res.render('countries/countries', {experiences})
+    res.render('countries/countries', {experiences, user: req.user})
 }
 
 const experienceGetByCountry = async(req, res) => {
     const {country} = req.params;
-    console.log(req.params)
+    // console.log(req.params)
     try {
         const experiences = await Experience.find({country: country });
         // const experiencesByCountry = await Experience.map()

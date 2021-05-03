@@ -4,15 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Travel experiences</title>
 </head>
 <body>
-    <h1>Home</h1>
-    <a href="/auth/login">Log in</a>
-    <a href="/auth/register">Register</a>
-    <a href="/tags">Buscar por etiqueta</a>
-    <a href="/locations">Buscar por lugar</a>
-    {{!-- <a href="/my-account">My account</a> --}}
+    <nav class="nav-bar">
+        <a href="/">Home</a>
+    
+        <form action="/auth/logout" method="POST">
+            <button type="submit">Logout</button>
+        </form>
+        
+        <a href="/my-account">My account</a>
+    </nav>
+
+    <h1>{{user.username}}</h1>
+
     <a href="/my-account/add-experience">Add experience</a>
+
+    <div class="experiences-container">
+        {{#if myExperiences}}
+            {{#each myExperiences}}
+                <div class="experience">
+                    <div class="experience__image">
+                        <img src={{image}} alt="">
+                    </div>
+                    <div class="experience__data">
+                        <h2>{{location}}</h2>
+                        <p>{{description}}</p>
+                        <p>Rating: {{rating}}</p>
+                        <ul class="experience__tags-list">
+                            {{#each tags}}
+                                <li>
+                                    <a href="/tags/{{this}}">{{this}}</a>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            {{/each}}
+        {{else}}
+            <p>You haven't added any experience yet</p>
+        {{/if}}
+    </div>
 </body>
 </html>

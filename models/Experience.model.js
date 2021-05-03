@@ -8,8 +8,8 @@ const experienceSchema = new Schema(
         description: {type: String, required: true},
         rating: {type: Number, required: true},
         tags: {type: [String], required: true, enum: ['nature', 'landscape', 'culture', 'roadtrip', 'big city']},
-        user: {type: mongoose.Types.ObjectId, ref: 'Users'},
-        // image: {type: String, required: true}
+        user: {type: mongoose.Types.ObjectId, required: true, ref: 'Users'},
+        image: {type: String, required: true}
     },
     { timestramp: true }
 );

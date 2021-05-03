@@ -5,15 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Travel experiences</title>
 </head>
 
 <body>
-    <a href="/">Home</a>
-    <a href="/">Log out</a>
-    <a href="/my-account">My account</a>
+    <nav class="nav-bar">
+        <a href="/">Home</a>
+    
+        <form action="/auth/logout" method="POST">
+            <button type="submit">Logout</button>
+        </form>
+        
+        <a href="/my-account">My account</a>
+    </nav>
+    
     <h1>Add experience</h1>
-    <form action="/my-account/add-experience" method="POST">
+    <form action="/my-account/add-experience" method="POST" enctype="multipart/form-data">
         <div>
             <label for="location">Location
                 <input type="text" name="location" id="location">
@@ -22,13 +30,15 @@
         <div>
             <label for="country">Country
                 <select name="country" id="country">
-                    <option value="Spain">Spain</option>
-                    <option value="Canada">Canada</option>
+                    {{#each countries}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                    {{!-- <option value="Canada">Canada</option>
                     <option value="France">France</option>
                     <option value="Norway">Norway</option>
                     <option value="Denmark">Denmark</option>
                     <option value="Netherlands">Netherlands</option>
-                    <option value="Portugal">Portugal</option>
+                    <option value="Portugal">Portugal</option> --}}
                 </select>
             </label>
         </div>
@@ -44,13 +54,21 @@
         </div>
         <div>
             <label for="tags">Etiqueta
-                <select>
-                    <option value="nature">Nature</option>
+                <select name="tags" id="tags" multiple >
+                    {{#each tags}}
+                        <option value="{{this}}">{{this}}</option>
+                    {{/each}}
+                    {{!-- <option value="nature">Nature</option>
                     <option value="landscape">Landscape</option>
                     <option value="culture">Culture</option>
                     <option value="roadtrip">Roadtrip</option>
-                    <option value="big city">Big city</option>
+                    <option value="big city">Big city</option> --}}
                 </select>
+            </label>
+        </div>
+        <div>
+            <label for="image">Imagen
+                <input type="file" name="image">
             </label>
         </div>
         <input type="submit" value="Add experience">

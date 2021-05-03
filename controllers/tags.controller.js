@@ -16,19 +16,19 @@ const tagsGet = async(req, res) => {
         }
         // console.log(tags)
     })
-    res.render('tags/tags', {tags})
+    res.render('tags/tags', {tags, user: req.user})
 }
 
 const experienceGetByTag = async(req, res) => {
     const {tag} = req.params;
-    console.log(tag)
+    // console.log(tag)
     try {
 
         const experiences = await Experience.find({tags: tag});
         // const experiencesByCountry = await Experience.map()
-        console.log(experiences);
+        // console.log(experiences);
 
-        res.render('experiences', {tag, experiences})
+        res.render('experiences', {tag, experiences, user: req.user})
         // return res.status(200).json(experiencesByCountry);
     } catch (error) {
         console.log('error', error);

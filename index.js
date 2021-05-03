@@ -5,13 +5,14 @@ const session = require("express-session");
 const passport = require("passport")
 const MongoStore = require("connect-mongo");
 
+const {isAuthenticated} = require('./middlewares/auth.middleware')
+
 const indexRoutes = require("./routes/index.routes");
 const authRoutes = require("./routes/auth.routes");
 const countriesRoutes = require("./routes/countries.routes");
 const tagsRoutes = require("./routes/tags.routes")
 const myAccountRoutes = require("./routes/my-account.routes")
 
-const {isAuthenticated} = require('./middlewares/auth.middleware')
 
 const db = require('./db.js')
 
@@ -36,6 +37,10 @@ server.use(
 );
 
 server.use(passport.initialize());
+
+server.use(passport.session())
+
+server.use(express.static(path.join(__dirname, 'public')))
 
 server.use(express.json());
 server.use(express.urlencoded({extended: true}));

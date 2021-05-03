@@ -4,20 +4,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>Travel experiences</title>
 </head>
 <body>
+
+    <nav class="nav-bar">
+        <a href="/">Home</a>
+    
+        {{#if user}}
+            <form action="/auth/logout" method="POST">
+                <button type="submit">Logout</button>
+            </form>
+        {{else}}
+            <a href="/auth/login">Log in</a>
+            <a href="/auth/register">Register</a>
+        {{/if}}
+        <a href="/my-account">My account</a>
+    </nav>
+    
+    
     <h1>Home</h1>
-    <a href="/auth/login">Log in</a>
-    <a href="/auth/register">Register</a>
-    <a href="/my-account">My account</a>
-    <div>
-        <div>
-            <a href="/tags">Buscar por etiqueta</a>
-        </div>
-        <div>
-            <a href="/countries">Buscar por lugar</a>
-        </div>
+    <div class="filter">
+        <a class="filter__option" href="/tags">
+            <div class="filter__image">
+                <img src="/uploads/nature-city.jpg" alt="">
+            </div>
+            <h2>Buscar por etiqueta</h2>
+        </a>
+        <a class="filter__option" href="/countries">
+            <div class="filter__image">
+                <img src="/uploads/map.jpg" alt="">
+            </div>
+            <h2>Buscar por país</h2>
+        </a>
+        
     </div>
     {{!-- <a href="/my-account/add-experience">Add experience</a> --}}
 </body>
