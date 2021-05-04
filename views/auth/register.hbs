@@ -20,23 +20,20 @@
     </nav>
 
     <h1>Register</h1>
-    <form action="/auth/register" method="POST">
-        <div>
-            <label for="username">Username
-                <input type="text" name="username" id="username">
-            </label>
+    <form action="/auth/register" method="POST" class="form">
+        <div class="form__option">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username">
         </div>
-        <div>
-            <label for="email">Email
-                <input type="email" name="email" id="email">
-            </label>
+        <div class="form__option">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
         </div>
-        <div>Password
-            <label for="password">
-                <input type="password" name="password" id="password">
-            </label>
+        <div class="form__option">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
         </div>
-        <input type="submit" value="Registrarse">
+        <input type="submit" value="Registrarse" class="button">
     </form>
 </body>
 

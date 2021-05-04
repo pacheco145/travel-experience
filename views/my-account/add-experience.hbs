@@ -21,57 +21,51 @@
     </nav>
     
     <h1>Add experience</h1>
-    <form action="/my-account/add-experience" method="POST" enctype="multipart/form-data">
-        <div>
-            <label for="location">Location
-                <input type="text" name="location" id="location">
-            </label>
+    <form class="form" action="/my-account/add-experience" method="POST" enctype="multipart/form-data">
+        <div class="form__option">
+            <label for="location">Location</label>
+            <input type="text" name="location" id="location">
         </div>
-        <div>
-            <label for="country">Country
-                <select name="country" id="country">
-                    {{#each countries}}
-                        <option value="{{this}}">{{this}}</option>
-                    {{/each}}
-                    {{!-- <option value="Canada">Canada</option>
-                    <option value="France">France</option>
-                    <option value="Norway">Norway</option>
-                    <option value="Denmark">Denmark</option>
-                    <option value="Netherlands">Netherlands</option>
-                    <option value="Portugal">Portugal</option> --}}
-                </select>
-            </label>
+        <div class="form__option">
+            <label for="country">Country</label>
+            <select name="country" id="country">
+                {{#each countries}}
+                    <option value="{{this}}">{{this}}</option>
+                {{/each}}
+                {{!-- <option value="Canada">Canada</option>
+                <option value="France">France</option>
+                <option value="Norway">Norway</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Netherlands">Netherlands</option>
+                <option value="Portugal">Portugal</option> --}}
+            </select>
         </div>
-        <div>
-            <label for="description">Description
-                <input type="text" name="description" id="description">
-            </label>
+        <div class="form__option">
+            <label for="description">Description</label>
+            <input type="text" name="description" id="description">
         </div>
-        <div>
-            <label for="rating">Rating
-                <input type="text" name="rating" id="rating">
-            </label>
+        <div class="form__option">
+            <label for="rating">Rating</label>
+            <input type="text" name="rating" id="rating">
         </div>
-        <div>
-            <label for="tags">Etiqueta
-                <select name="tags" id="tags" multiple >
-                    {{#each tags}}
-                        <option value="{{this}}">{{this}}</option>
-                    {{/each}}
-                    {{!-- <option value="nature">Nature</option>
-                    <option value="landscape">Landscape</option>
-                    <option value="culture">Culture</option>
-                    <option value="roadtrip">Roadtrip</option>
-                    <option value="big city">Big city</option> --}}
-                </select>
-            </label>
+        <div class="form__option form__option--select">
+            <label for="tags">Etiqueta</label>
+            <select class="form__select-tags" name="tags" id="tags" multiple >
+                {{#each tags}}
+                    <option value="{{this}}">{{this}}</option>
+                {{/each}}
+                {{!-- <option value="nature">Nature</option>
+                <option value="landscape">Landscape</option>
+                <option value="culture">Culture</option>
+                <option value="roadtrip">Roadtrip</option>
+                <option value="big city">Big city</option> --}}
+            </select>
         </div>
-        <div>
-            <label for="image">Imagen
-                <input type="file" name="image">
-            </label>
+        <div class="form__option form__option--file">
+            <label for="image">Imagen</label>
+            <input type="file" name="image">
         </div>
-        <input type="submit" value="Add experience">
+        <input class="form__option button form__option--button" type="submit" value="Add experience">
     </form>
 </body>
 

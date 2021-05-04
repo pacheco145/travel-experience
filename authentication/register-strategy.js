@@ -56,7 +56,8 @@ const registerStrategy = new LocalStrategy(
             const newUser = new User({
                 username: req.body.username,
                 email: email,
-                password: hash
+                password: hash,
+                role: 'user'
             });
 
             const savedUser = await newUser.save();

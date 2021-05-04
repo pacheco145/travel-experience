@@ -18,20 +18,9 @@
         <a href="/my-account">My account</a>
     </nav>
 
-    <h1>{{user.username}}</h1>
-
-    <a href="/my-account/add-experience" class="add-experience">
-        <button class="button">Add experience</button>
-    </a>
-    {{#if isAdmin}}
-        <a href="/my-account/remove-experiences" class="add-experience">
-            <button class="button">Remove experiences</button>
-        </a>
-    {{/if}}
 
     <div class="experiences-container">
-        {{#if myExperiences}}
-            {{#each myExperiences}}
+            {{#each experiences}}
                 <div class="experience">
                     <div class="experience__image img-effect">
                         <img src={{image}} alt="">
@@ -47,12 +36,12 @@
                                 </li>
                             {{/each}}
                         </ul>
+                        <form method="POST" action="/my-account/remove-experiences/{{id}}">
+                            <input type="submit" class="button" value="Remove experience">
+                        </form>
                     </div>
                 </div>
             {{/each}}
-        {{else}}
-            <p class="no-experience">You haven't added any experience yet</p>
-        {{/if}}
     </div>
 </body>
 </html>

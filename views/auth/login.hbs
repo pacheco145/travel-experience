@@ -19,18 +19,16 @@
     </nav>
 
     <h1>Login</h1>
-    <form action="/auth/login" method="POST">
-        <div>
-            <label for="email">Email
-                <input type="email" name="email" id="email">
-            </label>
+    <form action="/auth/login" method="POST" class="form">
+        <div class="form__option">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
         </div>
-        <div>
-            <label for="password">Password
-                <input type="password" name="password" id="password">
-            </label>
+        <div class="form__option">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
         </div>
-        <input type="submit" value="Log in">
+        <input type="submit" value="Log in" class="button">
     </form>
 </body>
 

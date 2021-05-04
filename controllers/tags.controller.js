@@ -9,13 +9,20 @@ const tagsGet = async(req, res) => {
     experiences.map(experience=>{
         // console.log(experience.tags)
         for (let tag of experience.tags) {
-            const hasTag = tags.includes(tag)
-            if (!hasTag){
-                tags.push(tag)
+            const hasTag = tags.some(tagOfArray =>{
+                return tagOfArray.tagName === tag
+            })
+
+            const hasImage = tags.some(tagOfArray => {
+                return tagOfArray.tagImg === experience.image
+            })
+            
+            if (!hasTag && !hasImage){
+                tags.push({tagName: tag, tagImg: experience.image})
             }
         }
-        // console.log(tags)
     })
+    console.log(tags)
     res.render('tags/tags', {tags, user: req.user})
 }
 

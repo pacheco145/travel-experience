@@ -25,11 +25,11 @@
     <h1>Buscar por etiquetas</h1>
     <div class="tags">
         {{#each tags}}
-            <a class="tags__option" href="/tags/{{this}}">
-            <div class="tags__image">
-                <img src="/uploads/map.jpg" alt="">
+            <a class="tags__option" href="/tags/{{tagName}}">
+            <div class="tags__image img-effect">
+                <img src="{{tagImg}}" alt="">
             </div>
-            <h2>{{this}}</h2>
+            <h2>{{tagName}}</h2>
         </a>
         {{/each}}
     </div>

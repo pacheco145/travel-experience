@@ -31,9 +31,21 @@
     <div class="experiences-container">
         {{#each experiences}}
                 <div class="experience">
-                    <h2>{{location}}</h2>
-                    <p>{{description}}</p>
-                    <p>Rating: {{rating}}</p>
+                    <div class="experience__image">
+                        <img src="{{image}}" alt="">
+                    </div>
+                    <div class="experience__data">
+                        <h2>{{location}}</h2>
+                        <p>{{description}}</p>
+                        <p>Rating: {{rating}}</p>
+                        <ul class="experience__tags-list">
+                            {{#each tags}}
+                                <li>
+                                    <a href="/tags/{{this}}">{{this}}</a>
+                                </li>
+                            {{/each}}
+                        </ul>
+                    </div>
                 </div>
         {{/each}}
     </div>
