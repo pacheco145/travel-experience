@@ -24,11 +24,11 @@
     <form class="form" action="/my-account/add-experience" method="POST" enctype="multipart/form-data">
         <div class="form__option">
             <label for="location">Location</label>
-            <input type="text" name="location" id="location">
+            <input class="form-input--50" type="text" name="location" id="location">
         </div>
         <div class="form__option">
             <label for="country">Country</label>
-            <select name="country" id="country">
+            <select class="form-input--50" name="country" id="country">
                 {{#each countries}}
                     <option value="{{this}}">{{this}}</option>
                 {{/each}}
@@ -42,11 +42,11 @@
         </div>
         <div class="form__option">
             <label for="description">Description</label>
-            <input type="text" name="description" id="description">
+            <input class="form-input--50" type="text" name="description" id="description">
         </div>
         <div class="form__option">
             <label for="rating">Rating</label>
-            <input type="text" name="rating" id="rating">
+            <input class="form-input--50" type="text" name="rating" id="rating">
         </div>
         <div class="form__option form__option--select">
             <label for="tags">Etiqueta</label>

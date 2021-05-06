@@ -293,6 +293,11 @@ h2 {
     justify-content: space-between;
 }
 
+.form-input--50 {
+    width: 160px;
+    border-width: 1px;
+}
+
 .form__option--select {
     /* margin-bottom: 8px; */
     display: flex;
