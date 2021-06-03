@@ -1,12 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,500;0,600;0,700;1,900&display=swap');
 
 :root {
     --primary-color: #551A8B;
+    --primary-color:#455b99;
     --secondary-color: #FCF5E5;
 }
 
 body {
     font-family: 'Raleway', sans-serif;
+    background-color: var(--secondary-color);
+    position: relative;
+    overflow: scroll;
 }
 
 
@@ -57,8 +61,10 @@ a:active {
 }
 
 h1 {
+    padding-top: 100px;
     margin-left: 40px;
     margin-bottom: 80px;
+    position: fixed;
 }
 
 h2 {
@@ -66,20 +72,33 @@ h2 {
     font-weight: 500;
 }
 
+h2::after {
+    content: "";
+    width: fit-content;
+    position: absolute;
+    height: 1px;
+}
+
 
 .nav-bar {
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 40px;
+    height: 50px;
+    width: 100%;
     margin-bottom: 50px;
     padding: 8px 20px;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
+    box-sizing: border-box;
+    z-index: 2;
 }
 
 .nav-bar > * {
-    margin-left: 12px;
+    color: var(--secondary-color);
+    margin-left: 20px;
     position: relative;
+    /* white-space: nowrap; */
 }
 
 /* .nav-bar > *::after{
@@ -99,12 +118,17 @@ h2 {
 } */
 
 .nav-bar > *:first-child {
-    /* flex-grow: 1; */
+    flex-grow: 1;
     margin-left: 0;
-    margin-right: 75vw;
+    /* margin-right: 75vw; */
+}
+
+.nav-bar button {
+    color: var(--secondary-color);
 }
 
 .filter {
+    padding-top: 250px;
     display: flex;
     justify-content: space-evenly;
     /* height: 250px; */
@@ -138,6 +162,7 @@ h2 {
     display: flex;
     justify-content: space-evenly;
     padding: 0 40px;
+    padding-top: 250px;
     /* max-width: 70%;
     margin: auto; */
 }
@@ -173,6 +198,13 @@ h2 {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     padding: 0 80px;
+    padding-top: 200px;
+}
+
+@media (max-width: 1400px) {
+    .countries {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 .countries__option {
@@ -211,6 +243,8 @@ h2 {
     align-items: center;
     max-width: 55%;
     margin: 0 auto 50px;
+    padding-top: 200px;
+    
 }
 
 .experience {
@@ -270,19 +304,26 @@ h2 {
     margin-right: 5px;
 }
 
+.username {
+    font-weight: 900;
+    font-style: italic;
+}
+
 .add-experience {
     display: block;
     text-align: right;
     margin-right: 30px;
+    padding-top: 200px;
 }
 
 .no-experience {
-    margin-top: 150px;
+    margin-top: 50px;
 }
 
 .form {
     display: flex;
     flex-direction: column;
+    padding-top: 200px;
     margin-left: 40px;
     width: 300px;
 }
